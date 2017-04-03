@@ -16,7 +16,12 @@ docker build -t biwhite/packt .
 Run with:
 
 ```
-docker run -d --name packt --rm -e PACKTEMAIL=xxx@xxx.xxx -e PACKTPASSWORD=xxxxxxxx -v /opt/packt/config:/config -v /opt/packt/data:/data biwhite/packt
+docker run -d --name packt --rm \
+    -e PACKTEMAIL=xxx@xxx.xxx \
+    -e PACKTPASSWORD=xxxxxxxx \
+    -v /opt/packt/config:/config \
+    -v /opt/packt/data:/data \
+    biwhite/packt
 ```
 
 ## Volumes and variables ##
