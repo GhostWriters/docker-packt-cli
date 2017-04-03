@@ -1,0 +1,8 @@
+.git
+.credentials
+client_secret.json
+env/
+configFile.cfg
+*.log
+__pycache__/
+*.pyc
