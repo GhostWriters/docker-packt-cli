@@ -21,13 +21,6 @@ else
     echo "ENV PACKTEMAIL not set"
 fi
 
-if [ -n "$PACKT_DOWNLOAD_PATH" ]; then
-    echo "ENV PACKT_DOWNLOAD_PATH provided as '$PACKT_DOWNLOAD_PATH'"
-    sed -i s|download_folder_path:.*|download_folder_path: $PACKT_DOWNLOAD_PATH| $CFG
-else
-    echo "ENV PACKT_DOWNLOAD_PATH not set"
-fi
-
 if [ -n "$PACKT_DOWNLOAD_FORMATS" ]; then
     echo "ENV PACKT_DOWNLOAD_FORMATS provided as '$PACKT_DOWNLOAD_FORMATS'"
     sed -i s|download_formats:.*|download_formats: $PACKT_DOWNLOAD_FORMATS| $CFG
