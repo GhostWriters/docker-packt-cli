@@ -1,4 +1,4 @@
-FROM lsiobase/alpine.python
+FROM lsiobase/alpine.python3
 MAINTAINER GhostWriters
 ADD root /
 WORKDIR /root
