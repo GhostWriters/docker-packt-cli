@@ -1,7 +1,7 @@
 
 # Container for Packt daily download script #
 
-This container fires up an alpine linux docker running cron, scheduled to claim the daily free book once per night at 1am.
+This container fires up an alpine linux with python3 docker running cron, scheduled to claim the daily free book once per night at 1am.
 
 ## Run ##
 
@@ -42,4 +42,5 @@ If not set, the config file will be left alone.
 
 - [biwhite](https://github.com/biwhite)  for creating the intital docker container.
 - [igbt6](https://github.com/igbt6) for providing the upstream script available at https://github.com/igbt6/Packt-Publishing-Free-Learning
+- [LinuxServer.io](https://www.linuxserver.io/) for maintaining the base image used in this project.
  	  
