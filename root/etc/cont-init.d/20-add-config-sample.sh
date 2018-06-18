@@ -10,7 +10,7 @@ if [ ! -f $CFG ]; then
 fi
 # If environment arguments have been provided, switch the values in the sample config to these
 if [ -n "$PACKT_EMAIL" ]; then
-    echo 'ENV PACKTEMAIL provided'
+    echo 'ENV PACKT_EMAIL provided'
     sed -i s/email=.*/email=$PACKT_EMAIL/ $CFG
 else
     echo 'ENV PACKTEMAIL not set'
