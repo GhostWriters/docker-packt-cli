@@ -17,7 +17,7 @@ else
 fi
 
 if [ -n "$PACKT_PASSWORD" ]; then
-    echo 'ENV PACKTPASSWORD provided'
+    echo 'ENV PACKT_PASSWORD provided'
     sed -i s/password=.*/password=$PACKT_PASSWORD/ $CFG
 else
     echo 'ENV PACKTEMAIL not set'
