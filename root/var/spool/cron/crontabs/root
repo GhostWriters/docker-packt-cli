@@ -1,1 +1,1 @@
-21 2 * * * /root/Packt-Publishing-Free-Learning/src/packtPublishingFreeEbook.py -c /config -g -da
+0 1 * * * python3 /root/Packt-Publishing-Free-Learning/src/packtPublishingFreeEbook.py -c /config/configFile.cfg -gd > /config/packtPublishingFreeEbook.log
