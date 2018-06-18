@@ -38,11 +38,11 @@ else
     sed -i s/download_book_titles:.*/download_book_titles:/ $CFG
 fi
 
-if [ -n "$PACKT_ANTICAPTCHA_DATA" ]; then
-    echo 'ENV PACKT_ANTICAPTCHA_DATA provided'
-    sed -i s/key:.*/key:\ $PACKT_ANTICAPTCHA_DATA/ $CFG
+if [ -n "$PACKT_ANTICAPTCHA_KEY" ]; then
+    echo 'ENV PACKT_ANTICAPTCHA_Key provided'
+    sed -i s/key:.*/key:\ $PACKT_ANTICAPTCHA_KEY/ $CFG
 else
-    echo 'ENV PACKT_ANTICAPTCHA_DATA not set'
+    echo 'ENV PACKT_ANTICAPTCHA_KEY not set'
 fi
 
 echo 'Replacing path with /data'
