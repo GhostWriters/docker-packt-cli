@@ -24,7 +24,7 @@ docker run -d --name packt --rm \
 ## Volumes and variables ##
 
 Volumes:
-  - /config, where we can find a configFile.cfg, where log is stored, where google auth details go
+  - /config, where we can find the configFile.cfg and log file
   - /data, where files are downloaded to
 
 OPTIONAL Variables:
