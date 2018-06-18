@@ -9,10 +9,13 @@ Run with:
 
 ```
 docker run -d --name packt --rm \
-    -e PACKT_EMAIL=xxx@xxx.xxx \
-    -e PACKT_PASSWORD=xxxxxxxx \
+    -e PACKT_EMAIL=<xxx@xxx.xxx> \
+    -e PACKT_PASSWORD=<passwprd> \
     -e PACKT_DOWNLOAD_FORMATS=pdf, epub, mobi, code \
-    -e PACKT_ANTICAPTCHA_KEY=xxxxxxxxxxxx \
+    -e PACKT_ANTICAPTCHA_KEY=<key> \
+    -e PUID=<UID> \
+    -e PGID=<GID> \
+    -e TZ=<timezone> \
     -v /opt/packt/config:/config \
     -v /opt/packt/data:/data \
     ghostwriters/docker-packt
