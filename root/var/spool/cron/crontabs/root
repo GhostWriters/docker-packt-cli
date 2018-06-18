@@ -1,1 +1,1 @@
-*/10 * * * * python3 /root/Packt-Publishing-Free-Learning/src/packtPublishingFreeEbook.py -c /config/configFile.cfg -gd > /config/packtPublishingFreeEbook.log
+0 1 * * * python3 /root/Packt-Publishing-Free-Learning/src/packtPublishingFreeEbook.py -c /config/configFile.cfg -gd > /config/packtPublishingFreeEbook.log
