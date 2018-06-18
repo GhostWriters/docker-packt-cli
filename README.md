@@ -10,7 +10,7 @@ Run with:
 ```
 docker run -d --name packt --rm \
     -e PACKT_EMAIL=<xxx@xxx.xxx> \
-    -e PACKT_PASSWORD=<passwprd> \
+    -e PACKT_PASSWORD=<password> \
     -e PACKT_DOWNLOAD_FORMATS=pdf, epub, mobi, code \
     -e PACKT_ANTICAPTCHA_KEY=<key> \
     -e PUID=<UID> \
