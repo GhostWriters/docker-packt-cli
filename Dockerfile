@@ -1,8 +1,8 @@
-FROM lsiobase/alpine.python3
+FROM alpine:3.12
 LABEL maintainer="GhostWriters"
 ADD root /
 WORKDIR /root
-RUN apk add --update git
-RUN pip install packt --upgrade
+RUN apk add --update git py3-pip
+RUN pip3 install packt --upgrade
 
 ENTRYPOINT ["/init"]
