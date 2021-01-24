@@ -1,7 +1,7 @@
 
 # Container for Packt daily download script #
 
-This creates a docker container running  [LinuxServer.io](https://www.linuxserver.io/) Alpine Linux image running cron, scheduled to claim the daily free book once per night at 1am. For more information about what this container calls visit <https://github.com/packt-cli/Packt-Publishing-Free-Learning>.
+This creates a Alpine Linux docker container running running cron, scheduled to claim the daily free book once per night at 1am. For more information about what this container calls visit <https://github.com/packt-cli/Packt-Publishing-Free-Learning>.
 
 ## Run ##
 
@@ -45,4 +45,3 @@ Anticaptcha key required to download the daily book.
 
 - [biwhite](https://github.com/biwhite)  for creating the intital docker container.
 - <https://github.com/packt-cli/Packt-Publishing-Free-Learning> for maintaining the package to handle the downloading.
-- [LinuxServer.io](https://www.linuxserver.io/) for maintaining the base image used in this project.
