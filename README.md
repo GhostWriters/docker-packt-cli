@@ -32,11 +32,11 @@ Volumes:
 
 OPTIONAL: Variables:
 
-- PACKT_EMAIL, email address registered with Packt account
-- PACKT_PASSWORD, password for Packt account
-- PACKT_DOWNLOAD_FORMATS=pdf, epub, mobi, code
-- PACKT_ANTICAPTCHA_KEY= get an api key from <https://anti-captcha.com>
-- PACKT_DOWNLOAD_BOOK_TITLES, specify individual books
+- PACKT_EMAIL - email address registered with Packt account
+- PACKT_PASSWORD - password for Packt account
+- PACKT_DOWNLOAD_FORMATS - pdf, epub, mobi, code
+- PACKT_ANTICAPTCHA_KEY - get an api key from <https://anti-captcha.com>
+- PACKT_DOWNLOAD_BOOK_TITLES - specify individual books
 
 If variables are set, they overwrite what is already in the configFile.cfg file
 at container startup. If not set, the config file will be left alone.
