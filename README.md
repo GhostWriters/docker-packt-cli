@@ -1,7 +1,7 @@
 
 # Container for Packt daily download script #
 
-This container fires up an alpine linux with python3 docker running cron, scheduled to claim the daily free book once per night at 1am.
+This creates a docker container running  [LinuxServer.io](https://www.linuxserver.io/) Alpine Linux image running cron, scheduled to claim the daily free book once per night at 1am. For more information about what this container calls visit <https://github.com/packt-cli/Packt-Publishing-Free-Learning>.
 
 ## Run ##
 
@@ -24,23 +24,25 @@ docker run -d --name packt --rm \
 ## Volumes and variables ##
 
 Volumes:
-  - /config, where the configFile.cfg and log file are placed
-  - /data, where files are downloaded to
+
+- /config, where the configFile.cfg and log file are placed
+- /data, where files are downloaded to
 
 OPTIONAL: Variables:
-  - PACKT_EMAIL, email address registered with Packt account
-  - PACKT_PASSWORD, password for Packt account
-  - PACKT_DOWNLOAD_FORMATS=pdf, epub, mobi, code
-  - PACKT_ANTICAPTCHA_KEY= get an api key from https://anti-captcha.com
-  - PACKT_DOWNLOAD_BOOK_TITLES, specify individual books
+
+- PACKT_EMAIL, email address registered with Packt account
+- PACKT_PASSWORD, password for Packt account
+- PACKT_DOWNLOAD_FORMATS=pdf, epub, mobi, code
+- PACKT_ANTICAPTCHA_KEY= get an api key from <https://anti-captcha.com>
+- PACKT_DOWNLOAD_BOOK_TITLES, specify individual books
 
 If variables are set, they overwrite what is already in the configFile.cfg file at container startup.
 If not set, the config file will be left alone.
-#### Anticaptcha key required to download the daily book. ####
 
-## Special Thanks  ##
+Anticaptcha key required to download the daily book.
+
+## Special Thanks ##
 
 - [biwhite](https://github.com/biwhite)  for creating the intital docker container.
-- [igbt6](https://github.com/igbt6) for providing the upstream script available at https://github.com/igbt6/Packt-Publishing-Free-Learning
+- <https://github.com/packt-cli/Packt-Publishing-Free-Learning> for maintaining the package to handle the downloading.
 - [LinuxServer.io](https://www.linuxserver.io/) for maintaining the base image used in this project.
- 	  
