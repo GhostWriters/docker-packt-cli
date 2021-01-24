@@ -1,4 +1,4 @@
-FROM lsiobase/alpine
+FROM python:3.9-slim-buster
 LABEL maintainer="GhostWriters"
 ADD root /
 WORKDIR /root
