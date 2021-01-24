@@ -1,9 +1,11 @@
+# Container for Packt daily download script
 
-# Container for Packt daily download script #
+This creates a Alpine Linux docker container running running cron, scheduled to
+claim the daily free book once per night at 1am. For more information about what
+this container calls visit
+<https://github.com/packt-cli/Packt-Publishing-Free-Learning>.
 
-This creates a Alpine Linux docker container running running cron, scheduled to claim the daily free book once per night at 1am. For more information about what this container calls visit <https://github.com/packt-cli/Packt-Publishing-Free-Learning>.
-
-## Run ##
+## Run
 
 Run with:
 
@@ -21,7 +23,7 @@ docker run -d --name packt --rm \
     ghostwriters/docker-packt
 ```
 
-## Volumes and variables ##
+## Volumes and variables
 
 Volumes:
 
@@ -36,12 +38,14 @@ OPTIONAL: Variables:
 - PACKT_ANTICAPTCHA_KEY= get an api key from <https://anti-captcha.com>
 - PACKT_DOWNLOAD_BOOK_TITLES, specify individual books
 
-If variables are set, they overwrite what is already in the configFile.cfg file at container startup.
-If not set, the config file will be left alone.
+If variables are set, they overwrite what is already in the configFile.cfg file
+at container startup. If not set, the config file will be left alone.
 
 Anticaptcha key required to download the daily book.
 
-## Special Thanks ##
+## Special Thanks
 
-- [biwhite](https://github.com/biwhite)  for creating the intital docker container.
-- <https://github.com/packt-cli/Packt-Publishing-Free-Learning> for maintaining the package to handle the downloading.
+- [biwhite](https://github.com/biwhite) for creating the intital docker
+  container.
+- <https://github.com/packt-cli/Packt-Publishing-Free-Learning> for maintaining
+  the package to handle the downloading.
