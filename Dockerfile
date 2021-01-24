@@ -1,4 +1,4 @@
-FROM python:3.9-slim-buster
+FROM alpine:3.12
 LABEL maintainer="GhostWriters"
 ADD root /
 WORKDIR /root
