@@ -1,6 +1,5 @@
 #!/bin/sh
 
-chown -R abc:abc /config
 CFG=/config/configFile.cfg
 
 # This copies the sample config in place if not one present
