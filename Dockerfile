@@ -4,4 +4,5 @@ ADD root /
 WORKDIR /root
 RUN apk add --no-cache git py3-pip
 RUN pip3 install packt pyasn1 --upgrade
+COPY . .
 ENTRYPOINT ["docker-entrypoint.sh"]
