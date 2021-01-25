@@ -1,4 +1,4 @@
-#!/usr/bin/with-contenv sh
+#!/bin/bash
 
 chown -R abc:abc /config
 CFG=/config/configFile.cfg
