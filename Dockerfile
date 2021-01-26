@@ -12,3 +12,4 @@ RUN	rm -rf /var/cache/apk/*
 RUN chmod +x /opt/docker-entrypoint.sh
 
 ENTRYPOINT [ "/opt/docker-entrypoint.sh" ]
+CMD [ "/bin/sh" ]
