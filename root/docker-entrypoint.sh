@@ -1,9 +1,8 @@
-#!/usr/bin/with-contenv sh
+#!/bin/sh
 
-chown -R abc:abc /config
 CFG=/config/configFile.cfg
 
-# This copies the sample config in place if not one present
+# This copies the sample config if one is not present in the config dir
 if [ ! -f $CFG ]; then
     echo 'No config file, providing sample'
     cp /root/Packt-Publishing-Free-Learning/src/configFileTemplate.cfg $CFG
@@ -50,3 +49,6 @@ sed -i s@download_folder_path:.*@download_folder_path:\ \\/data@ $CFG
 
 echo 'Set logfile path to /data'
 sed -i s@ebook_extra_info_log_file_path:.*@ebook_extra_info_log_file_path:\ \\/data\\/eBookMetadata.log@ $CFG
+
+echo 'Start crond'
+crond -f
