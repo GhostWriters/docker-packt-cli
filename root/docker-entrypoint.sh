@@ -51,4 +51,4 @@ echo 'Set logfile path to /data'
 sed -i s@ebook_extra_info_log_file_path:.*@ebook_extra_info_log_file_path:\ \\/data\\/eBookMetadata.log@ $CFG
 
 echo 'Start cron'
-cron -f
+crond -f
