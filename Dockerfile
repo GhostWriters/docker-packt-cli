@@ -6,9 +6,7 @@ ADD root /
 COPY /root/docker-entrypoint.sh /opt/docker-entrypoint.sh
 WORKDIR /root
 
-RUN apt-get update -y
-RUN apt-get install -y cron
-RUN apk add --no-cache git py3-pip
+RUN apk add --no-cache git py3-pip busybox-initscripts
 RUN pip3 install packt --upgrade
 RUN	rm -rf /var/cache/apk/*
 RUN chmod +x /opt/docker-entrypoint.sh
