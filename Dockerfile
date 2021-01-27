@@ -3,6 +3,7 @@ FROM alpine:3.12
 LABEL maintainer="GhostWriters"
 
 ADD root /
+RUN cd root
 RUN ls -lh
 WORKDIR /root
 
