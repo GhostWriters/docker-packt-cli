@@ -3,8 +3,7 @@ FROM alpine:3.12
 LABEL maintainer="GhostWriters"
 
 ADD root /
-RUN cd root
-RUN ls -lh
+RUN ls -lR
 WORKDIR /root
 
 RUN apk add --no-cache py3-pip
