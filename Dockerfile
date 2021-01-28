@@ -2,7 +2,7 @@ FROM alpine:3.12
 
 LABEL maintainer="GhostWriters"
 
-ADD root /
+COPY root /
 RUN chmod +x /opt/docker-entrypoint.sh
 
 RUN apk add --no-cache py3-pip
