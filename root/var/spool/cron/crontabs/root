@@ -1,1 +1,1 @@
-0 1 * * * packt-cli -gd -c /config/configFile.cfg > /config/LOG_FILE.log 2>&1
+0 1 * * * packt-cli -gd -c /config/configFile.cfg > /config/logFile.log 2>&1
