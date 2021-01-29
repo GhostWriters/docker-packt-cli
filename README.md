@@ -9,7 +9,7 @@ this container calls visit
 
 Run with:
 
-```
+```shell
 docker run -d --name packt --rm \
     -e PACKT_EMAIL=<xxx@xxx.xxx> \
     -e PACKT_PASSWORD=<password> \
