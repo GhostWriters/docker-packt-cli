@@ -2,10 +2,13 @@ FROM alpine:3.12
 
 LABEL maintainer="GhostWriters"
 
-ADD root /
+COPY root /
 RUN chmod +x /opt/docker-entrypoint.sh
 
+# hadolint ignore=DL3018
 RUN apk add --no-cache py3-pip
-RUN pip3 install packt
+
+# hadolint ignore=DL3013
+RUN pip3 install --no-cache-dir packt
 
 ENTRYPOINT ["/opt/docker-entrypoint.sh"]
