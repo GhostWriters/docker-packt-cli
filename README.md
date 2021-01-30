@@ -1,5 +1,7 @@
 # Container for Packt daily download script
 
+[![GitHub Super-Linter](https://github.com/GhostWriters/docker-packt/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
+
 This creates a Alpine Linux docker container running running cron, scheduled to
 claim the daily free book once per night at 1am. For more information about what
 this container calls visit
@@ -9,7 +11,7 @@ this container calls visit
 
 Run with:
 
-```
+```docker
 docker run -d --name packt --rm \
     -e PACKT_EMAIL=<xxx@xxx.xxx> \
     -e PACKT_PASSWORD=<password> \
