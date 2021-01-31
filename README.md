@@ -15,7 +15,7 @@ this container calls visit
 Run with:
 
 ```docker
-docker run -d
+docker run -d \
   --name=packt --rm \
   -e PACKT_EMAIL=<xxx@xxx.xxx> \
   -e PACKT_PASSWORD=<password> \
