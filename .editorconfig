@@ -1,0 +1,13 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# Tab indentation
+[*]
+indent_style = tab
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.{yaml,md}]
+indent_size = 2
+
+[*.{sh}]
+indent_size = 4
