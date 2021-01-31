@@ -25,10 +25,3 @@ jobs:
         env:
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # Runs the EditorConfig action
-      - name: EditorConfig
-        uses: zbeekman/EditorConfig-Action@master
-        env:
-          EC_FIX_ERROR: true
-          ALWAYS_LINT_ALL_FILES: true
