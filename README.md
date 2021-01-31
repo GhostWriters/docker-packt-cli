@@ -15,7 +15,8 @@ this container calls visit
 Run with:
 
 ```docker
-docker run -d --name packt --rm \
+docker run -d
+  --name=packt --rm \
   -e PACKT_EMAIL=<xxx@xxx.xxx> \
   -e PACKT_PASSWORD=<password> \
   -e PACKT_DOWNLOAD_FORMATS=pdf, epub, mobi, code \
@@ -25,7 +26,8 @@ docker run -d --name packt --rm \
   -e TZ=<timezone> \
   -v /home/user/packt/config:/config \
   -v /home/user/packt/books:/data \
-ghostwriters/docker-packt
+  --restart unless-stopped \
+  ghostwriters/docker-packt
 ```
 
 ## Volumes and variables
