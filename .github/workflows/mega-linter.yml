@@ -52,6 +52,7 @@ jobs:
             mega-linter.log
 
       - name: Print parameters
+        if: ${{ success() }} || ${{ failure() }}
         run: |
           echo "has_updated_sources: ${{ steps.ml.outputs.has_updated_sources }}"
           echo "APPLY_FIXES_EVENT: ${{ env.APPLY_FIXES_EVENT }}"
