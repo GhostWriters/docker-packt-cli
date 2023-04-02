@@ -42,17 +42,16 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Upload MegaLinter artifacts
-      - name: Archive production artifacts
-        if: ${{ success() }} || ${{ failure() }}
-        uses: actions/upload-artifact@v3
-        with:
-          name: MegaLinter reports
-          path: |
-            megalinter-reports
-            mega-linter.log
+      # - name: Archive production artifacts
+      #   if: ${{ success() }} || ${{ failure() }}
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: MegaLinter reports
+      #     path: |
+      #       megalinter-reports
+      #       mega-linter.log
 
       - name: Print parameters
-        if: ${{ success() }} || ${{ failure() }}
         run: |
           echo "has_updated_sources: ${{ steps.ml.outputs.has_updated_sources }}"
           echo "APPLY_FIXES_EVENT: ${{ env.APPLY_FIXES_EVENT }}"
