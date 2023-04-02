@@ -29,7 +29,7 @@ jobs:
       - name: MegaLinter
         id: ml
         # cupcake is the recommended flavour based on current files in the repository
-        uses: oxsecurity/megalinter@v6
+        uses: oxsecurity/megalinter/flavors/documentation@v6
         env:
           VALIDATE_ALL_CODEBASE: ${{ github.event_name == 'pull_request' }} # Validates all source when its a PR, else just the git diff with main.
           PAT: ${{ secrets.PAT }}
@@ -46,6 +46,7 @@ jobs:
             mega-linter.log
 
       - name: Print parameters
+        if: ${{ success() }} || ${{ failure() }}
         run: |
           echo "has_updated_sources: ${{ steps.ml.outputs.has_updated_sources }}"
           echo "github.ref: ${{ github.ref }}"
