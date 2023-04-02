@@ -51,6 +51,10 @@ jobs:
       #       megalinter-reports
       #       mega-linter.log
 
+      # Example step that will always run
+      - name: My step
+        run: echo "Hello, world!"
+
       - name: Print parameters
         run: |
           echo "has_updated_sources: ${{ steps.ml.outputs.has_updated_sources }}"
