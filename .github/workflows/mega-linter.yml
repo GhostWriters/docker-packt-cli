@@ -53,6 +53,7 @@ jobs:
 
       # Example step that will always run
       - name: My step
+        if: always()
         run: echo "Hello, world!"
 
       - name: Print parameters
