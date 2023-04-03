@@ -57,7 +57,7 @@ jobs:
             mega-linter.log
 
       - name: Print IF section parameters and boolean result
-        if: always()
+        if: ${{ always() }}
         run: |
           echo "has_updated_sources: ${{ steps.ml.outputs.has_updated_sources }}"
           echo "APPLY_FIXES_EVENT: ${{ env.APPLY_FIXES_EVENT }}"
@@ -89,7 +89,7 @@ jobs:
           labels: bot
 
       - name: Print Create PR parameters and boolean result
-        if: always()
+        if: ${{ always() }}
         run: |
           echo "Token - ${{ secrets.PAT || secrets.GITHUB_TOKEN }}"
           echo "Commit Message - [MegaLinter] Apply linters automatic fixes"
@@ -106,7 +106,7 @@ jobs:
           echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
 
       - name: Print Prepare commit parameters and boolean result
-        if: always()
+        if: ${{ always() }}
         run: |
           echo "has_updated_sources: ${{ steps.ml.outputs.has_updated_sources }}"
           echo "APPLY_FIXES_EVENT: ${{ env.APPLY_FIXES_EVENT }}"
@@ -134,7 +134,7 @@ jobs:
         run: sudo chown -Rc $UID .git/
 
       - name: Print Commit and push applied linter fixes parameters and boolean result
-        if: always{}
+        if: ${{ always() }}
         run: |
           echo "Branch - ${{ github.event.pull_request.head.ref || github.head_ref || github.ref }}"
           echo "Commit Message - [MegaLinter] Apply linters fixes"
