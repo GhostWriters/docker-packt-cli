@@ -90,6 +90,12 @@ jobs:
           echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
           echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
 
+      - name: Create PR output
+        if: always()
+        run: |
+          echo "has_updated_sources - ${{ steps.ml.outputs.has_updated_sources }}"
+          echo "APPLY_FIXES_MODE - ${{ env.APPLY_FIXES_MODE }}"
+
       # Push new commit if applicable (for now works only on PR from same repository, not from forks)
       - name: Prepare commit
         id: pc
