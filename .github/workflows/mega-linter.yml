@@ -125,7 +125,6 @@ jobs:
           echo "Branch - ${{ github.event.pull_request.head.ref || github.head_ref || github.ref }}"
           echo "Commit Message - [MegaLinter] Apply linters fixes"
           echo "Commit User Name - megalinter-bot"
-          echo "Overall boolean result: ${{ steps.pc.conclusion == 'success' && (${{ success() }} || ${{ failure() }}) }}"
 
       - name: Commit and push applied linter fixes
         if: steps.pc.conclusion == 'success' && (${{ success() }} || ${{ failure() }})
