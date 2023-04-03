@@ -56,6 +56,16 @@ jobs:
             megalinter-reports
             mega-linter.log
 
+      - name: Print IF
+        if: always()
+        run: |
+          echo "output: ${{ steps.ml.outputs.has_updated_sources == 1 &&
+          (env.APPLY_FIXES_EVENT == 'all' || env.APPLY_FIXES_EVENT == github.event_name) &&
+          env.APPLY_FIXES_MODE == 'pull_request' &&
+          (github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository) &&
+          (${{ success() }} || ${{ failure() }}) }}"
+
+
       # Create pull request if applicable (for now works only on PR from same repository, not from forks)
       - name: Create Pull Request with applied fixes
         id: cpr
@@ -77,6 +87,11 @@ jobs:
           echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
           echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
 
+      - name: Print IF
+        if: always()
+        run: |
+          echo "output: ${{ ssteps.cpr.conclusion == 'success' && (${{ success() }} || ${{ failure() }}) }}"
+
       # Push new commit if applicable (for now works only on PR from same repository, not from forks)
       - name: Prepare commit
         id: pc
@@ -88,6 +103,17 @@ jobs:
           (${{ success() }} || ${{ failure() }})
         run: sudo chown -Rc $UID .git/
 
+      - name: Print IF
+        if: always()
+        run: |
+          echo "output: ${{ steps.ml.outputs.has_updated_sources == 1 &&
+          (env.APPLY_FIXES_EVENT == 'all' || env.APPLY_FIXES_EVENT == github.event_name) &&
+          env.APPLY_FIXES_MODE == 'commit' &&
+          github.ref != 'refs/heads/main' &&
+          (github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository) &&
+          (${{ success() }} || ${{ failure() }}) }}"
+
+
       - name: Commit and push applied linter fixes
         if: steps.pc.conclusion == 'success' && (${{ success() }} || ${{ failure() }})
         uses: stefanzweifel/git-auto-commit-action@v4
@@ -95,3 +121,8 @@ jobs:
           branch: ${{ github.event.pull_request.head.ref || github.head_ref || github.ref }}
           commit_message: "[MegaLinter] Apply linters fixes"
           commit_user_name: megalinter-bot
+
+      - name: Print IF
+        if: always()
+        run: |
+          echo "output: ${{ steps.pc.conclusion == 'success' && (${{ success() }} || ${{ failure() }}) }}"
