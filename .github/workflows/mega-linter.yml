@@ -59,66 +59,28 @@ jobs:
       # Create pull request if applicable (for now works only on PR from same repository, not from forks)
       - name: Create Pull Request with applied fixes
         id: cpr
-        if:
-          always() && (
-          steps.ml.outputs.has_updated_sources == 1 &&
-          env.APPLY_FIXES_MODE == 'pull_request'
-          )
-          # &&
-          # (
-          # env.APPLY_FIXES_EVENT == 'all' ||
-          # env.APPLY_FIXES_EVENT == github.event_name
-          # ) &&
-          # (
-          # github.event_name == 'push' ||
-          # github.event.pull_request.head.repo.full_name == github.repository
-          # ) &&
-          # (
-          # success() || failure()
-          # )
-
+        if: always() && steps.ml.outputs.has_updated_sources == 1 && (env.APPLY_FIXES_EVENT == 'all' || env.APPLY_FIXES_EVENT == github.event_name) && env.APPLY_FIXES_MODE == 'pull_request' && (github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository)
         uses: peter-evans/create-pull-request@v4
         with:
-          token: ${{secrets.PAT || secrets.GITHUB_TOKEN}}
+          token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
           commit-message: "[MegaLinter] Apply linters automatic fixes"
           title: "[MegaLinter] Apply linters automatic fixes"
           labels: bot
-
       - name: Create PR output
-        if: always() && steps.cpr.conclusion == 'success'
+        if: always() steps.ml.outputs.has_updated_sources == 1 && (env.APPLY_FIXES_EVENT == 'all' || env.APPLY_FIXES_EVENT == github.event_name) && env.APPLY_FIXES_MODE == 'pull_request' && (github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository)
         run: |
           echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
           echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
 
-      - name: Create PR output
-        if: always()
-        run: |
-          echo "has_updated_sources - ${{ steps.ml.outputs.has_updated_sources }}"
-          echo "APPLY_FIXES_MODE - ${{ env.APPLY_FIXES_MODE }}"
-
       # Push new commit if applicable (for now works only on PR from same repository, not from forks)
       - name: Prepare commit
-        id: pc
-        if:
-          always() && (
-          steps.ml.outputs.has_updated_sources == 1 &&
-          env.APPLY_FIXES_MODE == 'pull_request'
-          )
-          # &&
-          # (
-          # env.APPLY_FIXES_EVENT == 'all' ||
-          # env.APPLY_FIXES_EVENT == github.event_name
-          # ) &&
-          # (
-          # github.event_name == 'push' ||
-          # github.event.pull_request.head.repo.full_name == github.repository
-          # )
+        if: always() steps.ml.outputs.has_updated_sources == 1 && (env.APPLY_FIXES_EVENT == 'all' || env.APPLY_FIXES_EVENT == github.event_name) && env.APPLY_FIXES_MODE == 'commit' && github.ref != 'refs/heads/main' && (github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository)
         run: sudo chown -Rc $UID .git/
-
       - name: Commit and push applied linter fixes
-        if: always() && steps.pc.conclusion == 'success'
+        if: always() steps.ml.outputs.has_updated_sources == 1 && (env.APPLY_FIXES_EVENT == 'all' || env.APPLY_FIXES_EVENT == github.event_name) && env.APPLY_FIXES_MODE == 'commit' && github.ref != 'refs/heads/main' && (github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository)
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           branch: ${{ github.event.pull_request.head.ref || github.head_ref || github.ref }}
           commit_message: "[MegaLinter] Apply linters fixes"
           commit_user_name: megalinter-bot
+          commit_user_email: nicolas.vuillamy@ox.security
