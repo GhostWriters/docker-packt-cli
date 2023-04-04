@@ -1,9 +1,9 @@
 # Container for Packt daily download script
 
-[![GitHub contributors](https://img.shields.io/github/contributors/GhostWriters/docker-packt.svg?style=flat-square&color=607D8B)](https://github.com/GhostWriters/docker-packt/graphs/contributors)
-[![GitHub last commit master](https://img.shields.io/github/last-commit/GhostWriters/docker-packt/master.svg?style=flat-square&color=607D8B&label=code%20committed)](https://github.com/GhostWriters/docker-packt/commits/master)
-[![GitHub license](https://img.shields.io/github/license/GhostWriters/docker-packt.svg?style=flat-square&color=607D8B)](https://github.com/GhostWriters/docker-packt/blob/master/LICENSE.md)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/GhostWriters/docker-packt/Super-Linter/master?style=flat-square&color=607D8B&logo=github)](https://github.com/GhostWriters/docker-packt/actions?query=workflow%3ASuper-Linter+branch%3Amaster)
+[![GitHub contributors](https://img.shields.io/github/contributors/GhostWriters/docker-packt.svg?style=flat-square&color=607D8B)](https://github.com/GhostWriters/docker-packt-cli/graphs/contributors)
+[![GitHub last commit main](https://img.shields.io/github/last-commit/GhostWriters/docker-packt/main.svg?style=flat-square&color=607D8B&label=code%20committed)](https://github.com/GhostWriters/docker-packt-cli/commits/main)
+[![GitHub license](https://img.shields.io/github/license/GhostWriters/docker-packt.svg?style=flat-square&color=607D8B)](https://github.com/GhostWriters/docker-packt-cli/blob/main/LICENSE.md)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/GhostWriters/docker-packt/Super-Linter/main?style=flat-square&color=607D8B&logo=github)](https://github.com/GhostWriters/docker-packt-cli/actions?query=workflow%3ASuper-Linter+branch%3Amain)
 
 This creates a Alpine Linux docker container running running cron, scheduled to
 claim the daily free book once per night at 1am. For more information about what
