@@ -2,7 +2,7 @@
 
 [![GitHub contributors](https://img.shields.io/github/contributors/GhostWriters/docker-packt.svg?style=flat-square&color=607D8B)](https://github.com/GhostWriters/docker-packt-cli/graphs/contributors)
 [![GitHub last commit main](https://img.shields.io/github/last-commit/GhostWriters/docker-packt/main.svg?style=flat-square&color=607D8B&label=code%20committed)](https://github.com/GhostWriters/docker-packt-cli/commits/main)
-[![GitHub license](https://img.shields.io/github/license/GhostWriters/docker-packt.svg?style=flat-square&color=607D8B)](https://github.com/GhostWriters/docker-packt-cli/blob/main/LICENSE.md)
+[![GitHub license](https://img.shields.io/github/license/GhostWriters/docker-packt.svg?style=flat-square&color=607D8B)](https://github.com/GhostWriters/docker-packt-cli/blob/main/LICENSE)
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/GhostWriters/docker-packt/Super-Linter/main?style=flat-square&color=607D8B&logo=github)](https://github.com/GhostWriters/docker-packt-cli/actions?query=workflow%3ASuper-Linter+branch%3Amain)
 
 This creates a Alpine Linux docker container running running cron, scheduled to
