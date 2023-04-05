@@ -40,7 +40,7 @@ jobs:
           images: docker.io/${{ github.repository }}
             ghcr.io/${{ github.repository }}
       #    tags: |
-       #     type=raw,value=latest,enable={{is_default_branch}}
+      #     type=raw,value=latest,enable={{is_default_branch}}
       #      type=ref,event=branch
 
       # Builds and pushes the Docker image to Docker Hub and the GitHub Container Registry with the following tags:
