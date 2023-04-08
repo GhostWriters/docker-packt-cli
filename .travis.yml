@@ -1,9 +1,0 @@
-sudo: required
-
-services:
-  - docker
-
-language: bash
-
-install:
-  - docker build .
