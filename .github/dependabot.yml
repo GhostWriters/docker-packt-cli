@@ -5,14 +5,14 @@ updates:
     schedule:
       # Check for updates to GitHub Actions every day at 11:30am
       interval: "daily"
-      time: "11:30"
+      time: "12:00"
 
   - package-ecosystem: "pip"
     directory: "/"
     # Check the npm registry for updates every day at 11:30am
     schedule:
       interval: "daily"
-      time: "11:30"
+      time: "12:00"
 
   - package-ecosystem: "docker"
     # Look for a `Dockerfile` in the `root` directory
@@ -20,4 +20,4 @@ updates:
     # Check for updates once a week at 11:30am
     schedule:
       interval: "weekly"
-      time: "11:30"
+      time: "12:00"
