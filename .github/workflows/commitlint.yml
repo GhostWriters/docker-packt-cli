@@ -1,5 +1,7 @@
 name: commitlint
 
+permissions: read-all
+
 on: [push, pull_request]
 
 jobs:

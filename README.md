@@ -5,7 +5,12 @@
 [![GitHub license](https://img.shields.io/github/license/GhostWriters/docker-packt.svg?style=flat-square&color=607D8B)](https://github.com/GhostWriters/docker-packt-cli/blob/main/LICENSE)
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/GhostWriters/docker-packt/Mega-Linter/main?style=flat-square&color=607D8B&logo=github)](https://github.com/GhostWriters/docker-packt-cli/actions?query=workflow%3AMega-Linter+branch%3Amain)
 
-These instructions detail how to set up a docker container that includes a scheduled cron job to automatically claim the daily free book from Packt at 1am each night. Packt offers free learning e-books each day, and you can find more information about this service at <https://www.packtpub.com/packt/offers/free-learning>. To learn more about docker, please visit the official documentation at <https://docs.docker.com/get-started/overview/>. If you're new to cron jobs, you can learn more about them on the Unix/Linux man pages at <https://help.ubuntu.com/community/CronHowto>. For more information about the code used in this container, please see the project page at <https://gitlab.com/packt-cli/packt-cli>.
+These instructions detail how to set up a docker container that includes a scheduled cron job to automatically claim the daily free
+book from Packt at 1am each night. Packt offers free learning e-books each day, and you can find more information about this service
+at <https://www.packtpub.com/packt/offers/free-learning>. To learn more about docker, please visit the official documentation at
+<https://docs.docker.com/get-started/overview/>. If you're new to cron jobs, you can learn more about them on the Unix/Linux man
+pages at <https://help.ubuntu.com/community/CronHowto>. For more information about the code used in this container, please see the
+project page at <https://gitlab.com/packt-cli/packt-cli>.
 
 ## Run
 
