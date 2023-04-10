@@ -4,7 +4,8 @@ permissions: read-all
 
 on:
   workflow_run:
-    workflows: ["Mega-Linter"]
+    workflows:
+      - "Mega-Linter"
     types:
       - completed
 
