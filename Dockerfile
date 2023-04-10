@@ -1,14 +1,11 @@
-FROM alpine:3.17
+FROM ghcr.io/linuxserver/baseimage-alpine:3.17-a17cd2f4-ls15
 
 LABEL maintainer="GhostWriters"
 
 COPY root /
-RUN chmod +x /opt/docker-entrypoint.sh
 
-# hadolint ignore=DL3018
-RUN apk add --no-cache py3-pip
-
-# hadolint ignore=DL3013
-RUN pip3 install --no-cache-dir packt
+RUN apk add --no-cache py3-pip=22.3.1 && \
+    pip3 install --no-cache-dir packt==1.7.0 && \
+    whoami
 
 ENTRYPOINT ["/opt/docker-entrypoint.sh"]
