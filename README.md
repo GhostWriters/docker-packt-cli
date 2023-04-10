@@ -29,7 +29,7 @@ docker run -d \
   -v /home/user/packt/config:/config \
   -v /home/user/packt/books:/data \
   --restart unless-stopped \
-  ghostwriters/docker-packt
+  ghostwriters/docker-packt-cli:latest
 ```
 
 ## Volumes and variables

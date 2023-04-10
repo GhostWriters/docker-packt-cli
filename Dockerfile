@@ -8,7 +8,6 @@ LABEL maintainer="GhostWriters"
 COPY root /
 
 # Install required packages and application dependencies
-# hadolint ignore=DL3018
 RUN apk add --no-cache py3-pip && \
     pip3 install --no-cache-dir -r /opt/requirements.txt
 
