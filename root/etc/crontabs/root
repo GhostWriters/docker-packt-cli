@@ -1,1 +1,1 @@
-0 20 * * * packt-cli -gd -c /config/configFile.cfg 2>&1 | tee /config/logFile.log
+0 1 * * * packt-cli -gd -c /config/configFile.cfg 2>&1 | tee /config/logFile.log
