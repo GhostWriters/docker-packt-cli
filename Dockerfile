@@ -1,5 +1,5 @@
 # Set the base image
-FROM ghcr.io/linuxserver/baseimage-alpine:3.17-a17cd2f4-ls15
+FROM ghcr.io/linuxserver/baseimage-alpine:3.17-17acebe3-ls14
 
 # Set the maintainer
 LABEL maintainer="GhostWriters"
@@ -9,7 +9,7 @@ COPY root /
 
 # Install required packages and application dependencies
 RUN apk add --no-cache py3-pip=22.3.1 && \
-    pip3 install --no-cache-dir packt==1.7.0 && \
+    pip3 install --no-cache-dir -r /opt/requirements.txt && \
     whoami
 
 # Add a health check command to ensure the container is running correctly
