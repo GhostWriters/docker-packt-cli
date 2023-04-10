@@ -8,9 +8,8 @@ LABEL maintainer="GhostWriters"
 COPY root /
 
 # Install required packages and application dependencies
-RUN apk add --no-cache py3-pip=22.3.1 && \
-    pip3 install --no-cache-dir -r /opt/requirements.txt && \
-    whoami
+RUN apk add --no-cache py3-pip && \
+    pip3 install --no-cache-dir -r /opt/requirements.txt
 
 # Add a health check command to ensure the container is running correctly
 HEALTHCHECK --interval=1h \
