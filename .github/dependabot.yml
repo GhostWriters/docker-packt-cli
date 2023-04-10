@@ -7,7 +7,7 @@ updates:
       interval: "daily"
 
   - package-ecosystem: "pip"
-    directory: "/opt"
+    directory: "/root/opt"
     # Check the npm registry for updates every day at 11:30am
     schedule:
       interval: "daily"
