@@ -3,12 +3,9 @@
 [![GitHub contributors](https://img.shields.io/github/contributors/GhostWriters/docker-packt.svg?style=flat-square&color=607D8B)](https://github.com/GhostWriters/docker-packt-cli/graphs/contributors)
 [![GitHub last commit main](https://img.shields.io/github/last-commit/GhostWriters/docker-packt/main.svg?style=flat-square&color=607D8B&label=code%20committed)](https://github.com/GhostWriters/docker-packt-cli/commits/main)
 [![GitHub license](https://img.shields.io/github/license/GhostWriters/docker-packt.svg?style=flat-square&color=607D8B)](https://github.com/GhostWriters/docker-packt-cli/blob/main/LICENSE)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/GhostWriters/docker-packt/Super-Linter/main?style=flat-square&color=607D8B&logo=github)](https://github.com/GhostWriters/docker-packt-cli/actions?query=workflow%3ASuper-Linter+branch%3Amain)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/GhostWriters/docker-packt/Mega-Linter/main?style=flat-square&color=607D8B&logo=github)](https://github.com/GhostWriters/docker-packt-cli/actions?query=workflow%3AMega-Linter+branch%3Amain)
 
-This creates a Alpine Linux docker container running running cron, scheduled to
-claim the daily free book once per night at 1am. For more information about what
-this container calls visit
-<https://github.com/packt-cli/Packt-Publishing-Free-Learning>.
+These instructions detail how to set up a docker container that includes a scheduled cron job to automatically claim the daily free book from Packt at 1am each night. Packt offers free learning e-books each day, and you can find more information about this service at <https://www.packtpub.com/packt/offers/free-learning>. To learn more about docker, please visit the official documentation at <https://docs.docker.com/get-started/overview/>. If you're new to cron jobs, you can learn more about them on the Unix/Linux man pages at <https://help.ubuntu.com/community/CronHowto>. For more information about the code used in this container, please see the project page at <https://gitlab.com/packt-cli/packt-cli>.
 
 ## Run
 
@@ -42,17 +39,15 @@ OPTIONAL: Variables:
 - PACKT_EMAIL - email address registered with Packt account
 - PACKT_PASSWORD - password for Packt account
 - PACKT_DOWNLOAD_FORMATS - pdf, epub, mobi, code
-- PACKT_ANTICAPTCHA_KEY - get an api key from <https://anti-captcha.com>
+- PACKT_ANTICAPTCHA_KEY - get an api key from [anti-captcha.com](https://anti-captcha.com)
 - PACKT_DOWNLOAD_BOOK_TITLES - specify individual books
 
 If variables are set, they overwrite what is already in the configFile.cfg file
 at container startup. If not set, the config file will be left alone.
 
-Anticaptcha key required to download the daily book.
+**NOTE:** Anticaptcha key required to download the daily book.
 
 ## Special Thanks
 
-- [biwhite](https://github.com/biwhite) for creating the initial docker
-  container.
-- <https://github.com/packt-cli/Packt-Publishing-Free-Learning> for maintaining
-  the package to handle the downloading.
+- [packt-cli](https://gitlab.com/packt-cli/packt-cli) for maintaining the package to handle the downloading.
+- [LinuxServer.io](https://www.linuxserver.io) for maintaining most Docker images used in this project.
