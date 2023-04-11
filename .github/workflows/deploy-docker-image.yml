@@ -4,10 +4,12 @@ permissions: read-all
 
 on:
   push:
+    branches:
+      - main
 
 jobs:
   docker:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     permissions:
       packages: write
     steps:
