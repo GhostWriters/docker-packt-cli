@@ -3,18 +3,18 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      # Check for updates to GitHub Actions every day at 11:30am
+      # Check for updates to GitHub Actions every day
       interval: "daily"
 
   - package-ecosystem: "pip"
     directory: "/root/opt"
-    # Check the npm registry for updates every day at 11:30am
+    # Check the npm registry for updates every day
     schedule:
       interval: "daily"
 
   - package-ecosystem: "docker"
     # Look for a `Dockerfile` in the `root` directory
     directory: "/"
-    # Check for updates once a week at 11:30am
+    # Check for updates once a week
     schedule:
       interval: "weekly"

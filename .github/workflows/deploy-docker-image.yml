@@ -49,7 +49,7 @@ jobs:
             ghcr.io/${{ github.repository }}
           tags: |
             type=raw,value=latest,enable={{is_default_branch}}
-            type=raw,value={{branch}}
+          # type=raw,value={{branch}}
 
       # Builds and pushes the Docker image to Docker Hub and the GitHub Container Registry with the following tags:
       # - 'latest' for successful builds on the main branch.
