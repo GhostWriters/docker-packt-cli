@@ -6,10 +6,10 @@ name: Mega-Linter
 permissions: read-all
 
 on:
-  push:
-    branches-ignore:
-      - main
+  # Trigger mega-linter at every push. Action will also be visible from Pull Requests to main
+  push: # Comment this line to trigger action only on pull-requests (not recommended if you don't pay for GH Actions)
   pull_request:
+    branches: [main]
 
 env: # Comment env block if you do not want to apply fixes
   # Apply linter fixes configuration
@@ -25,6 +25,7 @@ jobs:
   build:
     name: MegaLinter
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request' || (github.event_name == 'push' && !contains( github.event.pull_request.head.ref, '/') ) }}
     permissions:
       pull-requests: write
     steps:
