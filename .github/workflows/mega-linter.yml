@@ -25,20 +25,10 @@ jobs:
   build:
     name: MegaLinter
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request' || (github.event_name == 'push' && !contains( github.event.pull_request.head.ref, '/') ) }}
     permissions:
       pull-requests: write
     steps:
-      - name: Check PR condition
-        shell: bash
-        run: |
-          if [ "${{ github.event_name }}" = "pull_request" ] || \
-            [ "${{ github.event_name }}" = "push" -a $(git branch --contains "${GITHUB_SHA}" --format '%(refname:lstrip=2)') = "${{ github.head_ref }}" ];\
-          then
-            echo "Action will continue as no PR found";
-          else
-            echo "Action skipped";
-            exit 78;
-          fi
       # Git Checkout
       - name: Checkout Code
         uses: actions/checkout@v3.5.1
