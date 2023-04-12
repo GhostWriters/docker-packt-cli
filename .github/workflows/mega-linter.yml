@@ -21,7 +21,6 @@ concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
   cancel-in-progress: true
 
-#Test
 jobs:
   build:
     name: MegaLinter
@@ -29,6 +28,17 @@ jobs:
     permissions:
       pull-requests: write
     steps:
+      - name: Check PR condition
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ] ||
+            [ "${{ github.event_name }}" = "push" -a \
+              "$(git branch --contains ${GITHUB_SHA} --format '%(refname:lstrip=2)')" = "${{ github.head_ref }}" ];
+          then
+              echo "Action will continue as no PR found";
+          else
+              echo "Action skipped";
+              exit 78;
+          fi
       # Git Checkout
       - name: Checkout Code
         uses: actions/checkout@v3.5.1
@@ -39,11 +49,11 @@ jobs:
       # MegaLinter
       - name: MegaLinter
         id: ml
-        # You can override MegaLinter flavor used to have faster performances
+        # To improve performance, you have the option to override the MegaLinter flavor being used.
         # More info at https://megalinter.io/flavors/
         uses: oxsecurity/megalinter/flavors/documentation@v6.22.2
         env:
-          # All available variables are described in documentation
+          # All available variables are described in documentation.
           # https://megalinter.io/configuration/
           VALIDATE_ALL_CODEBASE: ${{ github.event_name == 'pull_request' }} # Validates all source when its a PR, else just the git diff with main.
           PAT: ${{ secrets.PAT }}
