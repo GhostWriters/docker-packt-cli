@@ -13,7 +13,7 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@v3.5.1
-      - uses: ahmadnassri/action-dependabot-auto-merge@v2.6.5
+      - uses: ahmadnassri/action-dependabot-auto-merge@v2.6.6
         with:
           target: minor
           github-token: ${{ secrets.PAT }}
