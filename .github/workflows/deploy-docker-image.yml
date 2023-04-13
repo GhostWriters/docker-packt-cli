@@ -26,7 +26,7 @@ jobs:
 
       # Authenticates with Docker Hub
       - name: Login to Docker Hub
-        uses: docker/login-action@dd4fa0671be5250ee6f50aedf4cb05514abda2c7 # v1.4.1
+        uses: docker/login-action@dd4fa0671be5250ee6f50aedf4cb05514abda2c7 # v1.14.1
         with:
           registry: docker.io
           username: ${{ secrets.DOCKERHUB_USERNAME }}
