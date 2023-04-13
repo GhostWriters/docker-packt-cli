@@ -30,7 +30,7 @@ jobs:
     steps:
       # Git Checkout
       - name: Checkout Code
-        uses: actions/checkout@v3.5.1
+        uses: actions/checkout@v3.5.2
         with:
           token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
           fetch-depth: ${{ github.event_name == 'pull_request' && '0' || '1' }}
