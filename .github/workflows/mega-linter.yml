@@ -38,8 +38,8 @@ jobs:
       # MegaLinter
       - name: MegaLinter
         id: ml
-        # You can override MegaLinter flavor used to have faster performances
-        # More info at https://megalinter.io/flavors/
+        # To improve performance, you have the option to change the MegaLinter flavor that is being used.
+        # Complete details on available flavors can be found at https://megalinter.io/flavors/.
         uses: oxsecurity/megalinter/flavors/documentation@fe568b3592efcd04d21632d99501fc120df8110a # v6.22.1
         env:
           # All available variables are described in documentation
@@ -47,8 +47,6 @@ jobs:
           VALIDATE_ALL_CODEBASE: ${{ github.event_name == 'pull_request' }} # Validates all source when its a PR, else just the git diff with main.
           PAT: ${{ secrets.PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # ADD YOUR CUSTOM ENV VARIABLES HERE OR DEFINE THEM IN A FILE .mega-linter.yml AT THE ROOT OF YOUR REPOSITORY
-          # DISABLE: COPYPASTE,SPELL # Uncomment to disable copy-paste and spell checks
 
       # Upload MegaLinter artifacts
       - name: Archive production artifacts
