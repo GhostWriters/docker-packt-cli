@@ -2,24 +2,25 @@
 
 CFG=/config/configFile.cfg
 
-# This copies the sample config if one is not present in the config dir
+# Downloads and copies a new configfile template if one is not present in the config dir.
 if [ ! -f $CFG ]; then
     echo 'No config file, providing sample'
-    cp /root/Packt-Publishing-Free-Learning/src/configFileTemplate.cfg $CFG
+    wget -O $CFG https://gitlab.com/packt-cli/packt-cli/-/raw/master/configFileTemplate.cfg
 fi
-# If environment arguments have been provided, switch the values in the sample config to these
+
+# If environment arguments have been provided, switch the values in the config to these.
 if [ -n "$PACKT_EMAIL" ]; then
     echo 'ENV PACKT_EMAIL provided'
     sed -i s/email=.*/email="$PACKT_EMAIL"/ $CFG
 else
-    echo 'ENV PACKTEMAIL not set'
+    echo 'ENV PACKT_EMAIL not set'
 fi
 
 if [ -n "$PACKT_PASSWORD" ]; then
     echo 'ENV PACKT_PASSWORD provided'
     sed -i s/password=.*/password="$PACKT_PASSWORD"/ $CFG
 else
-    echo 'ENV PACKTEMAIL not set'
+    echo 'ENV PACKT_PASSWORD not set'
 fi
 
 if [ -n "$PACKT_DOWNLOAD_FORMATS" ]; then
@@ -50,5 +51,5 @@ sed -i s@download_folder_path:.*@download_folder_path:\ \\/data@ $CFG
 echo 'Set logfile path to /data'
 sed -i s@ebook_extra_info_log_file_path:.*@ebook_extra_info_log_file_path:\ \\/data\\/eBookMetadata.log@ $CFG
 
-echo 'Start crond'
+echo 'Start crond in the foreground'
 crond -f
