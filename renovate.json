@@ -1,5 +1,14 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base"],
+  "docker": {
+    "registryUrl": "docker.io",
+    "baseImage": ["linuxserver/docker-baseimage-alpine"]
+  },
+  "schedule": ["every day"],
+  "labels": ["docker"],
+  "matchDatasource": [
+    "docker|alpine|linuxserver/docker-baseimage-alpine:3\\.\\d{2}-[a-f0-9]{8}-ls\\d{2}"
+  ],
   "automerge": true
 }
