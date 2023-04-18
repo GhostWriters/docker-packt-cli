@@ -12,10 +12,6 @@ To learn more about docker, please visit the official documentation at <https://
 If you're new to cron jobs, you can learn more about them on the Unix/Linux manpages at <https://help.ubuntu.com/community/CronHowto>.
 For more information about the code used in this container, please see the
 at <https://www.packtpub.com/packt/offers/free-learning>.
-To learn more about docker, please visit the official documentation at <https://docs.docker.com/get-started/overview/>.
-If you're new to cron jobs, you can learn more about them on the Unix/Linux manpages at <https://help.ubuntu.com/community/CronHowto>.
-For more information about the code used in this container, please see the
-project page at <https://gitlab.com/packt-cli/packt-cli>.
 
 ## Run
 
