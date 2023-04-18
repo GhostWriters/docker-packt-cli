@@ -1,8 +1,8 @@
 # Container for Packt daily download script
 
-[![GitHub contributors](https://img.shields.io/github/contributors/GhostWriters/docker-packt.svg?style=flat-square&color=607D8B)](https://github.com/GhostWriters/docker-packt-cli/graphs/contributors)
-[![GitHub last commit main](https://img.shields.io/github/last-commit/GhostWriters/docker-packt/main.svg?style=flat-square&color=607D8B&label=code%20committed)](https://github.com/GhostWriters/docker-packt-cli/commits/main)
-[![GitHub license](https://img.shields.io/github/license/GhostWriters/docker-packt.svg?style=flat-square&color=607D8B)](https://github.com/GhostWriters/docker-packt-cli/blob/main/LICENSE)
+[![GitHub contributors](https://img.shields.io/github/contributors/GhostWriters/docker-packt-cli.svg?style=flat-square&color=607D8B)](https://github.com/GhostWriters/docker-packt-cli/graphs/contributors)
+[![GitHub last commit main](https://img.shields.io/github/last-commit/GhostWriters/docker-packt-cli/main.svg?style=flat-square&color=607D8B&label=code%20committed)](https://github.com/GhostWriters/docker-packt-cli/commits/main)
+[![GitHub license](https://img.shields.io/github/license/GhostWriters/docker-packt-cli.svg?style=flat-square&color=607D8B)](https://github.com/GhostWriters/docker-packt-cli/blob/main/LICENSE)
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/GhostWriters/docker-packt-cli/Mega-Linter/main?style=flat-square&color=607D8B&logo=github)](https://github.com/GhostWriters/docker-packt-cli/actions?query=workflow%3AMega-Linter+branch%3Amain)
 
 These instructions detail how to set up a docker container that includes a scheduled cron job to automatically claim the daily free
