@@ -3,7 +3,7 @@
 [![GitHub contributors](https://img.shields.io/github/contributors/GhostWriters/docker-packt-cli.svg?style=flat-square&color=607D8B)](https://github.com/GhostWriters/docker-packt-cli/graphs/contributors)
 [![GitHub last commit main](https://img.shields.io/github/last-commit/GhostWriters/docker-packt-cli/main.svg?style=flat-square&color=607D8B&label=code%20committed)](https://github.com/GhostWriters/docker-packt-cli/commits/main)
 [![GitHub license](https://img.shields.io/github/license/GhostWriters/docker-packt-cli.svg?style=flat-square&color=607D8B)](https://github.com/GhostWriters/docker-packt-cli/blob/main/LICENSE)
-[![Renovate](https://img.shields.io/badge/renovate-enabled-brightgreen.svg?style=flat-square&color=607D8B)](https://www.mend.io/renovate/)
+[![Renovate](https://img.shields.io/badge/renovate-enabled-brightgreen.svg?style=flat-square&color=607D8B)](http://www.mend.io/renovate/)
 
 These instructions detail how to set up a docker container that includes a scheduled cron job to automatically claim the daily free
 book from Packt at 1am each night. Packt offers free learning e-books each day, and you can find more information about this service
