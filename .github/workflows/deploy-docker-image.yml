@@ -16,7 +16,7 @@ jobs:
       # Checks out the main branch of the repository to the runner
       - uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
         with:
-          fetch-depth: '0'
+          fetch-depth: "0"
 
       # This action creates a new git tag of the main branch with the new version number
       - name: Bump version and push tag
