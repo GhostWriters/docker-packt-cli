@@ -15,6 +15,15 @@ jobs:
     steps:
       # Checks out the main branch of the repository to the runner
       - uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
+        with:
+          fetch-depth: '0'
+
+      # This action creates a new git tag of the main branch with the new version number
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@d77194f92b4ca48b05df5c20709984535a9cd6e0 # v1.62.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
 
       # Sets up the QEMU emulator that emulates different architectures
       - name: Set up QEMU
