@@ -20,7 +20,6 @@ jobs:
 
       # This action creates a new git tag of the main branch with the new version number
       - name: Bump version and push tag
-        id: tag
         uses: anothrNick/github-tag-action@d77194f92b4ca48b05df5c20709984535a9cd6e0 # v1.62.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -51,6 +50,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Extract metadata (tags, labels) for Docker
+        id: metadata
         uses: docker/metadata-action@c4ee3adeed93b1fa6a762f209fb01608c1a22f1e # v4.4.0
         with:
           images: |
@@ -69,8 +69,8 @@ jobs:
           context: .
           push: true
           platforms: linux/amd64,linux/arm64,linux/arm/v7
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ steps.metadata.outputs.tags }}
+          labels: ${{ steps.metadata.outputs.labels }}
 
       # Create a release based on the new tag
       - name: Create release
