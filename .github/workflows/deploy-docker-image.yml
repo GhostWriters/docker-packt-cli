@@ -20,6 +20,7 @@ jobs:
 
       # This action creates a new git tag of the main branch with the new version number
       - name: Bump version and push tag
+        id: tag
         uses: anothrNick/github-tag-action@d77194f92b4ca48b05df5c20709984535a9cd6e0 # v1.62.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -75,5 +76,7 @@ jobs:
       # Create a release based on the new tag
       - name: Create release
         uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844 # v0.1.15
+        with:
+          tag_name: ${{ steps.tag.outputs.tag_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
