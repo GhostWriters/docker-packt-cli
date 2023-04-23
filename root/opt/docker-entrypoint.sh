@@ -5,15 +5,15 @@ date
 echo 'Running as user:' "$(whoami)"
 id "$(whoami)"
 
-if [ ! -d /config ]; then
-    echo "ERROR: /config volume is not mounted"
-    exit 1
-fi
+# if [ ! -d /config ]; then
+#     echo "ERROR: /config volume is not mounted"
+#     exit 1
+# fi
 
-if [ ! -d /data ]; then
-    echo "ERROR: /data volume is not mounted"
-    exit 1
-fi
+# if [ ! -d /data ]; then
+#     echo "ERROR: /data volume is not mounted"
+#     exit 1
+# fi
 
 CFG=/config/configFile.cfg
 

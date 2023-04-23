@@ -20,9 +20,10 @@ docker run -d \
     -e PACKT_ANTICAPTCHA_KEY=<key> \
     -e PUID=<UID> \
     -e PGID=<GID> \
+    -e TZ=<timezone> \
     -v /home/user/packt/config:/config \
     -v /home/user/packt/books:/data \
-    --restart unless-stopped \
+    --restart unless-stopped
     ghcr.io/ghostwriters/docker-packt-cli/docker-packt-cli:latest
 ```
 
