@@ -2,7 +2,7 @@
 FROM ghcr.io/linuxserver/baseimage-alpine:3.17
 
 # Set the timezone to Pacific Standard Time (PST)
-ENV TZ=America/Los_Angeles
+ENV TZ=Europe/London
 
 # Set the maintainer
 LABEL maintainer="GhostWriters"
