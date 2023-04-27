@@ -1,11 +1,2 @@
-# do daily/weekly/monthly maintenance
-# min   hour    day     month   weekday command
-#*/15    *       *       *       *       run-parts /etc/periodic/15min
-#0       *       *       *       *       run-parts /etc/periodic/hourly
-0        8       *       *       *       run-parts /etc/periodic/daily
-#0       3       *       *       6       run-parts /etc/periodic/weekly
-#0       5       1       *       *       run-parts /etc/periodic/monthly
-
-# rsnapshot examples
-#0       */4     *       *       *       rsnapshot alpha
-#50      23      *       *       *       rsnapshot beta
+#  min     hour    day     month   weekday  command
+    0       8       *       *       *       packt-cli -gd -c /config/configFile.cfg 2>&1 | tee /config/logFile.log
