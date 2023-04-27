@@ -1,2 +1,2 @@
-#  min     hour    day     month   weekday  command
+#  min     hour    day    month   weekday   command
     0       8       *       *       *       packt-cli -gd -c /config/configFile.cfg 2>&1 | tee /config/logFile.log
