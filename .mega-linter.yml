@@ -1,0 +1,13 @@
+# Configuration file for MegaLinter
+# See all available variables at https://megalinter.github.io/configuration/ and in linters documentation
+
+DISABLE:
+  - COPYPASTE
+  - SPELL
+
+SHOW_ELAPSED_TIME: true
+IGNORE_GENERATED_FILES: true
+PRINT_ALL_FILES: false
+FORMATTERS_DISABLE_ERRORS: false
+ERROR_ON_MISSING_EXEC_BIT: true
+MARKDOWN_MARKDOWNLINT_DISABLE_ERRORS: false
