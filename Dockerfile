@@ -14,11 +14,11 @@ RUN \
     pip3 install -U --no-cache-dir \
     pip \
     wheel \
-    packt && \
+    packt==1.8.0 && \
     echo "**** cleanup ****" && \
     rm -rf \
     /tmp/* \
-    $HOME/.cache
+    "$HOME/.cache"
 
 # Add a health check command to ensure the container is running correctly
 HEALTHCHECK --interval=1m \
