@@ -24,4 +24,4 @@
 .gitkeep       export-ignore
 
 # Force root folder
-root/* text eol=lf
+/root/** text eol=lf
