@@ -7,6 +7,9 @@ on: [pull_request_target, issues]
 jobs:
   greeting:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      issues: write
     steps:
       - uses: actions/first-interaction@1d8459ca65b335265f1285568221e229d45a995e # v1.1.1
         with:
