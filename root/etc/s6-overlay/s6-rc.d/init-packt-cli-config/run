@@ -31,14 +31,6 @@ else
     echo "ENV PACKT_DOWNLOAD_FORMATS not set"
 fi
 
-if [[ -n "$PACKT_DOWNLOAD_BOOK_TITLES" ]]; then
-    echo "ENV PACKT_DOWNLOAD_BOOK_TITLES provided as \"$PACKT_DOWNLOAD_BOOK_TITLES\""
-    sed -i "s/download_book_titles:.*/download_book_titles:\ \"$PACKT_DOWNLOAD_BOOK_TITLES\"/" "$CFG"
-else
-    echo "ENV PACKT_DOWNLOAD_BOOK_TITLES not set"
-    sed -i "s/download_book_titles:.*/download_book_titles:/" "$CFG"
-fi
-
 if [[ -n "$PACKT_ANTICAPTCHA_KEY" ]]; then
     echo "ENV PACKT_ANTICAPTCHA_Key provided"
     sed -i "s/key:.*/key:\ \"$PACKT_ANTICAPTCHA_KEY\"/" "$CFG"
