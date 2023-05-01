@@ -50,7 +50,7 @@ Once you run the container, it will automatically download a free eBook each day
 - [peter-evans/create-pull-request](https://github.com/peter-evans/create-pull-request) - Action for creating pull requests programmatically.
 - [softprops/action-gh-release](https://github.com/softprops/action-gh-release) - Action for creating GitHub releases.
 - [stefanzweifel/git-auto-commit-action](https://github.com/stefanzweifel/git-auto-commit-action) - Action for automatically committing changes to a repository.
-- [oxfordsecurity/megalinter](https://github.com/oxfordsecurity/megalinter) - Action for linting multiple languages at once.
+- [oxsecurity/megalinter](https://github.com/oxsecurity/megalinter) - Action for linting multiple languages at once.
 
 ## Contributing
 
