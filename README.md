@@ -35,6 +35,23 @@ You can mount two volumes to persist the Packt credentials and store the downloa
 
 Once you run the container, it will automatically download a free eBook each day from Packt publishing and store the files in the `/home/user/packt/books` directory on your host system.
 
+## GitHub Actions Used
+
+- [actions/checkout](https://github.com/actions/checkout) - Action for checking out code from a repository.
+- [actions/first-interaction](https://github.com/actions/first-interaction) - Action to identify a user's first contribution to a repository.
+- [actions/upload-artifact](https://github.com/actions/upload-artifact) - Action for uploading artifacts for later use in the workflow.
+- [amannn/action-semantic-pull-request](https://github.com/amannn/action-semantic-pull-request) - Action for enforcing conventional commit messages and semantic versioning.
+- [anothrNick/github-tag-action](https://github.com/anothrNick/github-tag-action) - Action for automatically creating a new tag and release based on version numbers.
+- [docker/build-push-action](https://github.com/docker/build-push-action) - Action for building and pushing Docker images.
+- [docker/login-action](https://github.com/docker/login-action) - Action for logging in to a Docker registry.
+- [docker/metadata-action](https://github.com/docker/metadata-action) - Action for adding Docker metadata to a GitHub repository.
+- [docker/setup-buildx-action](https://github.com/docker/setup-buildx-action) - Action for setting up Buildx on your Github Actions runner.
+- [docker/setup-qemu-action](https://github.com/docker/setup-qemu-action) - Action for setting up QEMU for cross-builds.
+- [peter-evans/create-pull-request](https://github.com/peter-evans/create-pull-request) - Action for creating pull requests programmatically.
+- [softprops/action-gh-release](https://github.com/softprops/action-gh-release) - Action for creating GitHub releases.
+- [stefanzweifel/git-auto-commit-action](https://github.com/stefanzweifel/git-auto-commit-action) - Action for automatically committing changes to a repository.
+- [oxsecurity/megalinter](https://github.com/oxsecurity/megalinter) - Action for linting multiple languages at once.
+
 ## Contributing
 
 If you have any feedback or run into issues with the container, please open an [issue](https://github.com/GhostWriters/docker-packt-cli/issues/new) on the GitHub repository. If you would like to contribute to this project, you can submit a [pull request](https://github.com/GhostWriters/docker-packt-cli/pulls).
