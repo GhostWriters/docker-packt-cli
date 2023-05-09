@@ -74,6 +74,12 @@ jobs:
           tags: ${{ steps.metadata.outputs.tags }}
           labels: ${{ steps.metadata.outputs.labels }}
 
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@5875562561d22a34be0c657405578705a169af6c # v1.9.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
       # Create a release based on the new tag
       - name: Create release
         uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844 # v0.1.15
