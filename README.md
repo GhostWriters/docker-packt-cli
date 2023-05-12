@@ -1,4 +1,4 @@
-![Banner](https://github.com/UnicornJules/docker-packt-cli/raw/main/Banner.png)
+![Banner](https://github.com/Ghostwriters/docker-packt-cli/raw/main/Banner.png)
 
 # docker-packt-cli
 
