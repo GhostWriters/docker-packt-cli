@@ -38,11 +38,50 @@ else
     echo "ENV PACKT_ANTICAPTCHA_KEY not set"
 fi
 
+if [[ -n "$PACKT_SMTP_HOST" ]]; then
+    echo "ENV PACKT_SMTP_HOST provided"
+    sed -i "s/host:.*/host:\ \"$PACKT_SMTP_HOST\"/" "$CFG"
+else
+    echo "ENV PACKT_SMTP_HOST not set"
+fi
+
+if [[ -n "$PACKT_SMTP_PORT" ]]; then
+    echo "ENV PACKT_SMTP_PORT provided"
+    sed -i "s/port:.*/port:\ \"$PACKT_SMTP_PORT\"/" "$CFG"
+else
+    echo "ENV PACKT_SMTP_PORT not set"
+fi
+
+if [[ -n "$PACKT_SMTP_PASSWORD" ]]; then
+    echo "ENV PACKT_SMTP_PASSWORD provided"
+    sed -i "s/password:.*/password:\ \"$PACKT_SMTP_PASSWORD\"/" "$CFG"
+else
+    echo "ENV PACKT_SMTP_PASSWORD not set"
+fi
+
+if [[ -n "$PACKT_SMTP_EMAIL" ]]; then
+    echo "ENV PACKT_SMTP_EMAIL provided"
+    sed -i "s/email:.*/email:\ \"$PACKT_SMTP_EMAIL\"/" "$CFG"
+else
+    echo "ENV PACKT_SMTP_EMAIL not set"
+fi
+
+if [[ -n "$PACKT_SMTP_TO_EMAILS" ]]; then
+    echo "ENV PACKT_SMTP_TO_EMAILS provided"
+    sed -i "s/to_emails:.*/to_emails:\ \"$PACKT_SMTP_TO_EMAILS\"/" "$CFG"
+else
+    echo "ENV PACKT_SMTP_TO_EMAILS not set"
+fi
+
+if [[ -n "$PACKT_SMTP_KINDLE_EMAILS" ]]; then
+    echo "ENV PACKT_SMTP_KINDLE_EMAILS provided"
+    sed -i "s/kindle_emails:.*/kindle_emails:\ \"$PACKT_SMTP_KINDLE_EMAILS\"/" "$CFG"
+else
+    echo "ENV PACKT_SMTP_KINDLE_EMAILS not set"
+fi
+
 echo "Replacing path with /data"
 sed -i "s@download_folder_path:.*@download_folder_path:\ \\/data@" "$CFG"
-
-echo "Set logfile path to /data"
-sed -i "s@ebook_extra_info_log_file_path:.*@ebook_extra_info_log_file_path:\ \\/data\\/eBookMetadata.log@" "$CFG"
 
 # set permissions
 lsiown -R abc:abc /config

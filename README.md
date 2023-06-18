@@ -20,6 +20,12 @@ docker run -d \
     -e PACKT_PASSWORD=<password> \
     -e PACKT_DOWNLOAD_FORMATS=pdf,epub,mobi,code \
     -e PACKT_ANTICAPTCHA_KEY=<key> \
+    -e PACKT_SMTP_HOST <smtp.poczta.onet.pl> \
+    -e PACKT_SMTP_PORT <587> \
+    -e PACKT_SMTP_PASSWORD <youremailpassword> \
+    -e PACKT_SMTP_EMAIL <youremail@youremail.com> \
+    -e PACKT_SMTP_TO_EMAILS <mail1@mail.com, mail2@mail.com> \
+    -e PACKT_SMTP_KINDLE_EMAILS <yourkindle@kindle.com> \
     -e PUID=<UID> \
     -e PGID=<GID> \
     -e TZ=<timezone> \
