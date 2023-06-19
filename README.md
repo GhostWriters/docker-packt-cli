@@ -39,9 +39,9 @@ You will need to replace `<xxx@xxx.xxx>` and `<password>` with your Packt accoun
 
 To automatically solve the CAPTCHA, you will need an [AntiCaptcha](https://anti-captcha.com/) API key, which you can set by attaching the `-e PACKT_ANTICAPTCHA_KEY=<key>` flag to your docker run command.
 
-You can mount two volumes to persist the Packt credentials and store the downloaded books in a directory on your host system. The `/config` directory will store your Packt credentials, and the `/data` directory will store the downloaded books. You can change the paths of the host directories by modifying the values after the `-v` flag.
+`PACKT_SMTP_HOST`, `PACKT_SMTP_PORT`, `PACKT_SMTP_PASSWORD`, `PACKT_SMTP_EMAIL`, `PACKT_SMTP_TO_EMAILS`, `PACKT_SMTP_KINDLE_EMAILS`: These parameters are related to the email notifications feature. If you want to receive email notifications about the downloaded eBooks, you need to provide the SMTP server details and the email addresses for sending the notifications.
 
-Once you run the container, it will automatically download a free eBook each day from Packt publishing and store the files in the `/home/user/packt/books` directory on your host system.
+You can mount two volumes to persist the Packt credentials and store the downloaded books in a directory on your host system. The `/config` directory will store your Packt credentials, and the `/data` directory will store the downloaded books. You can change the paths of the host directories by modifying the values after the `-v` flag.
 
 If you would prefer to use an alternative to ghcr.io, you can use the image hosted on [Docker Hub](https://hub.docker.com/repository/docker/ghostwriters/docker-packt-cli) `ghostwriters/docker-packt-cli:latest`,
 
