@@ -24,9 +24,10 @@ RUN \
     "$HOME/.cache"
 
 # Add a health check command to ensure the container is running correctly
-HEALTHCHECK --interval=1m \
+HEALTHCHECK --interval=15m \
     --timeout=3s \
-    CMD ps -ef | grep cron || exit 1
+    CMD ps -ef | grep cron || exit 1 \
+    && ping -c 1 www.packtpub.com >/dev/null 2>&1 || exit 1
 
-# ports and volumes
+# Volume where the config file and crontab
 VOLUME /config
