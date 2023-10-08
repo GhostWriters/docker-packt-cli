@@ -40,7 +40,7 @@ jobs:
         id: ml
         # To improve performance, you have the option to change the MegaLinter flavor that is being used.
         # Complete details on available flavors can be found at https://megalinter.io/flavors/.
-        uses: oxsecurity/megalinter/flavors/documentation@fda6ac3a38be0e969820709ac16e442464e5a035 # v7.3.0
+        uses: oxsecurity/megalinter/flavors/documentation@a87b2872713c6bdde46d2473c5d7ed23e5752dc2 # v7.4.0
         env:
           # All available variables are described in documentation
           # https://megalinter.io/configuration/
