@@ -6,6 +6,7 @@ DISABLE:
   - SPELL
 
 DISABLE_LINTERS:
+  - REPOSITORY_DEVSKIM # Disabled as currently not working
   - REPOSITORY_KICS # TODO: Fix KICS linter issues and re-enable
 
 DOCKERFILE_HADOLINT_CONFIG_FILE: .hadolint.yml
