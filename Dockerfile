@@ -1,5 +1,5 @@
 # Set the base image
-FROM ghcr.io/linuxserver/baseimage-alpine:3.18@sha256:69a17766244fb5dfeb796b42b5a94bfebb873e3595ca68ae37bd543619cca50c
+FROM ghcr.io/linuxserver/baseimage-alpine:3.19@sha256:a37922018245a0e8e6e8bf4fa7bdd963a01a0329626b27f2ed6ed3af0fcb7dd0
 
 # Set the maintainer
 LABEL maintainer="GhostWriters"
