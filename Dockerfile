@@ -11,13 +11,9 @@ COPY root/ /
 RUN \
     echo "**** install runtime packages ****" && \
     apk add --no-cache \
-    python3 && \
+    py3-pip && \
     echo "**** install app ****" && \
-    python3 -m ensurepip && \
-    pip3 install -U --no-cache-dir \
-    pip \
-    wheel && \
-    pip3 install --no-cache-dir -r /opt/requirements.txt && \
+    pip3 install --break-system-packages --no-cache-dir -r /opt/requirements.txt && \
     echo "**** cleanup ****" && \
     rm -rf \
     /tmp/* \
