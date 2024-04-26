@@ -22,7 +22,7 @@ jobs:
       # This action creates a new git tag of the main branch with the new version number
       - name: Bump version and push tag
         id: bumpTag
-        uses: anothrNick/github-tag-action@a2c70ae13a881faf2b4953baaa9e49731997ab36 # 1.67.0
+        uses: anothrNick/github-tag-action@afe4b67b57b8ab0908e4767109a5342003639e2e # 1.69.0
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
           WITH_V: true
