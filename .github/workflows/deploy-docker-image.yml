@@ -29,7 +29,7 @@ jobs:
 
       # Sets up the QEMU emulator that emulates different architectures
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@53851d14592bedcffcf25ea515637cff71ef929a # v3.3.0
+        uses: docker/setup-qemu-action@5964de0df58d5ad28b04d8fe2e6b80ad47105b91 # v3.5.0
 
       # Sets up the Docker Buildx plugin to build multi-architecture Docker images
       - name: Set up Docker Buildx
