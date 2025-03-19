@@ -1,0 +1,17 @@
+# Configuration file for yamllint.
+# Documentation: https://yamllint.readthedocs.io/en/stable/configuration.html
+---
+extends: default
+
+rules:
+  comments:
+    min-spaces-from-content: 1
+  line-length:
+    max: 205
+  truthy:
+    # uses the key 'on' without quotes which fails the truthy check
+    ignore: |
+      .github/workflows/deploy-docker-image.yml
+      .github/workflows/greetings.yml
+      .github/workflows/lint-pr-title.yml
+      .github/workflows/mega-linter.yml

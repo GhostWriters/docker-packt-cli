@@ -1,19 +1,22 @@
 # Configuration file for MegaLinter
 # See all available variables at https://megalinter.github.io/configuration/ and in linters documentation
-
+---
 DISABLE:
   - COPYPASTE
   - SPELL
 
 DISABLE_LINTERS:
-  - REPOSITORY_DEVSKIM # Disabled as currently not working
+  - REPOSITORY_DEVSKIM # Disabled as currently not working with .net 9
   - REPOSITORY_KICS # TODO: Fix KICS linter issues and re-enable
 
 DOCKERFILE_HADOLINT_CONFIG_FILE: .hadolint.yml
 ERROR_ON_MISSING_EXEC_BIT: true
 FORMATTERS_DISABLE_ERRORS: false
 IGNORE_GENERATED_FILES: true
+JSON_JSONLINT_ARGUMENTS: "-B"
 MARKDOWN_MARKDOWNLINT_DISABLE_ERRORS: false
 PRINT_ALL_FILES: false
 REPOSITORY_TRUFFLEHOG_ARGUMENTS: --exclude-paths=.trufflehogignore.txt
 SHOW_ELAPSED_TIME: true
+VALIDATE_ALL_CODEBASE: true
+YAML_YAMLLINT_ARGUMENTS: "--strict"
