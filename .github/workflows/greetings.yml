@@ -13,7 +13,7 @@ jobs:
       issues: write
     steps:
       - name: First Interaction
-        uses: actions/first-interaction@753c925c8d1ac6fede23781875376600628d9b5d # v3.0.0
+        uses: actions/first-interaction@1c4688942c71f71d4f5502a26ea67c331730fa4d # v3.1.0
         with:
           issue-message: "Thanks for opening your first issue here! Be sure to follow the relevant issue templates, or risk having this issue marked as invalid."
           pr-message: "Thanks for opening this pull request! Be sure to follow the [pull request template](https://github.com/GhostWriters/docker-packt-cli/blob/main/.github/PULL_REQUEST_TEMPLATE.md)!"
