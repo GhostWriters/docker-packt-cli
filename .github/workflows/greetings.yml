@@ -7,6 +7,7 @@ on: [pull_request_target, issues]
 
 jobs:
   greeting:
+    name: Greet First-Time Contributors
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
@@ -15,6 +16,6 @@ jobs:
       - name: First Interaction
         uses: actions/first-interaction@1c4688942c71f71d4f5502a26ea67c331730fa4d # v3.1.0
         with:
-          issue-message: "Thanks for opening your first issue here! Be sure to follow the relevant issue templates, or risk having this issue marked as invalid."
-          pr-message: "Thanks for opening this pull request! Be sure to follow the [pull request template](https://github.com/GhostWriters/docker-packt-cli/blob/main/.github/PULL_REQUEST_TEMPLATE.md)!"
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          issue_message: "Thanks for opening your first issue here! Be sure to follow the relevant issue templates, or risk having this issue marked as invalid."
+          pr_message: "Thanks for opening this pull request! Be sure to follow the [pull request template](https://github.com/GhostWriters/docker-packt-cli/blob/main/.github/PULL_REQUEST_TEMPLATE.md)!"
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
