@@ -5,10 +5,6 @@ DISABLE:
   - COPYPASTE
   - SPELL
 
-DISABLE_LINTERS:
-  # - REPOSITORY_DEVSKIM # Disabled as currently not working with .net 9
-  - REPOSITORY_KICS # TODO: Fix KICS linter issues and re-enable
-
 ACTION_ZIZMOR_UNSECURED_ENV_VARIABLES:
   - GITHUB_TOKEN
 
