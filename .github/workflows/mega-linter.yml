@@ -32,6 +32,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
+          persist-credentials: false
           token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
           fetch-depth: ${{ github.event_name == 'pull_request' && '0' || '1' }}
 
@@ -74,9 +75,12 @@ jobs:
           labels: bot
       - name: Create PR output
         if: always() && steps.cpr.conclusion == 'success'
+        env:
+          PR_NUMBER: ${{ steps.cpr.outputs.pull-request-number }}
+          PR_URL: ${{ steps.cpr.outputs.pull-request-url }}
         run: |
-          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
-          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
+          echo "Pull Request Number - ${PR_NUMBER}"
+          echo "Pull Request URL - ${PR_URL}"
 
       # Push new commit if applicable (for now works only on PR from same repository, not from forks)
       - name: Prepare commit
