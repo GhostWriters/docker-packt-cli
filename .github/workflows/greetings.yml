@@ -3,7 +3,10 @@ name: Greetings
 
 permissions: read-all
 
-on: [pull_request_target, issues]
+# pull_request_target is used here intentionally: the actions/first-interaction action
+# needs write access to post comments on PRs from forks, which pull_request does not
+# provide. No untrusted code is checked out or executed, so this is safe.
+on: [pull_request_target, issues] # zizmor: ignore[dangerous-triggers]
 
 jobs:
   greeting:
@@ -17,5 +20,6 @@ jobs:
         uses: actions/first-interaction@1c4688942c71f71d4f5502a26ea67c331730fa4d # v3.1.0
         with:
           issue_message: "Thanks for opening your first issue here! Be sure to follow the relevant issue templates, or risk having this issue marked as invalid."
-          pr_message: "Thanks for opening this pull request! Be sure to follow the [pull request template](https://github.com/GhostWriters/docker-packt-cli/blob/main/.github/PULL_REQUEST_TEMPLATE.md)!"
+          pr_message: "Thanks for opening this pull request! Be sure to follow the [pull request template](https://github.com/TommyE123/PMP-Automator/blob/main/.github/PULL_REQUEST_TEMPLATE.md)!"
           repo_token: ${{ secrets.GITHUB_TOKEN }}
+
