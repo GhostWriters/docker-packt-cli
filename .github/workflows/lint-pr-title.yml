@@ -3,7 +3,10 @@ name: "Lint PR Title"
 
 permissions: read-all
 
-on:
+# pull_request_target is used here intentionally: the action reads the PR title from
+# the event payload and needs token write access to report a status check on fork PRs.
+# No untrusted code is checked out or executed, so this is safe.
+on: # zizmor: ignore[dangerous-triggers]
   pull_request_target:
     types:
       - opened
