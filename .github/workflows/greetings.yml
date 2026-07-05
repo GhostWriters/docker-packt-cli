@@ -22,4 +22,3 @@ jobs:
           issue_message: "Thanks for opening your first issue here! Be sure to follow the relevant issue templates, or risk having this issue marked as invalid."
           pr_message: "Thanks for opening this pull request! Be sure to follow the [pull request template](https://github.com/TommyE123/PMP-Automator/blob/main/.github/PULL_REQUEST_TEMPLATE.md)!"
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-
