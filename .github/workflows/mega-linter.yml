@@ -69,6 +69,26 @@ jobs:
               github.ref
             }}
 
+      # Free up disk space before running MegaLinter
+      - name: Cleanup Unused Docker Images and Containers
+        run: |
+          echo "=== Docker Images Before Cleanup ==="
+          docker images
+
+          echo ""
+          echo "=== Cleaning Docker Images ==="
+          docker image prune -af || true
+          docker container prune -f || true
+
+          echo ""
+          echo "=== Docker Images After Cleanup ==="
+          docker images
+
+          echo ""
+          echo "=== Disk Usage After Cleanup ==="
+          df -h
+          docker system df
+
       # MegaLinter
       - name: MegaLinter
         # More info at https://megalinter.io/flavors/
@@ -199,4 +219,4 @@ jobs:
           commit_message: "[MegaLinter] Apply linters fixes"
           commit_user_name: megalinter-bot
           commit_user_email: 129584137+megalinter-bot@users.noreply.github.com
-          file_pattern: '. :!.github/workflows/**'
+          file_pattern: ". :!.github/workflows/**"
