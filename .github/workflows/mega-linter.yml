@@ -1,20 +1,13 @@
 # MegaLinter GitHub Action configuration file
 # More info at https://megalinter.io
----
 name: MegaLinter
 
-# Trigger mega-linter at every push. Action will also be visible from Pull
-# Requests to main
+# Trigger mega-linter on every PR to main.
 on:
-  # Comment this line to trigger action only on pull-requests
-  # (not recommended if you don't pay for GH Actions)
-  push:
-
   pull_request:
     branches:
       - main
 
-# Comment env block if you do not want to apply fixes
 permissions: {}
 
 env:
@@ -68,26 +61,6 @@ jobs:
               github.head_ref ||
               github.ref
             }}
-
-      # Free up disk space before running MegaLinter
-      - name: Cleanup Unused Docker Images and Containers
-        run: |
-          echo "=== Docker Images Before Cleanup ==="
-          docker images
-
-          echo ""
-          echo "=== Cleaning Docker Images ==="
-          docker image prune -af || true
-          docker container prune -f || true
-
-          echo ""
-          echo "=== Docker Images After Cleanup ==="
-          docker images
-
-          echo ""
-          echo "=== Disk Usage After Cleanup ==="
-          df -h
-          docker system df
 
       # MegaLinter
       - name: MegaLinter
@@ -219,4 +192,4 @@ jobs:
           commit_message: "[MegaLinter] Apply linters fixes"
           commit_user_name: megalinter-bot
           commit_user_email: 129584137+megalinter-bot@users.noreply.github.com
-          file_pattern: ". :!.github/workflows/**"
+          file_pattern: '. :!.github/workflows/**'
